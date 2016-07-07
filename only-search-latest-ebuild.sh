@@ -8,7 +8,21 @@ set -e
 
 gentoo_src="${HOME}/src/gentoo"
 
-command_to_run="grep -H inherit.*games"
+# Deprecated games eclass:
+# As of 2016/06/07: 777
+#command_to_run="grep -H inherit.*games"
+
+# EAPI 1:
+# As of 2016/06/07: 1386
+#command_to_run="grep -L EAPI="
+
+# EAPI 2-4:
+# As of 2016/06/07: 2276
+#command_to_run="grep -H EAPI=.*[2..4]"
+
+
+command_to_run=""
+
 
 for x in ${gentoo_src}/*/*
 do
