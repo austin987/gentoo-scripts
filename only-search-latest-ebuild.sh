@@ -33,7 +33,7 @@ do
         continue
     fi
 
-    y="$(ls -1 ${x}/*\.ebuild | tail -n1)"
+    y="$(ls -1 ${x}/*\.ebuild | sort -V | tail -n1)"
     #echo "$x's latest ebuild is $y"
     ${command_to_run} ${y} 2>/dev/null || continue
 done
